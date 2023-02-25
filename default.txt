@@ -1,0 +1,55 @@
+import React from 'react';
+import './style.css';
+import { useState } from 'react';
+
+export default function App() {
+  const [counter, setCounter] = useState(0);
+  console.log('hola');
+  function restar() {
+    if (counter > 0) {
+      setCounter(counter - 1);
+    } else {
+      setCounter(counter);
+    }
+  }
+
+  return (
+    <div>
+      <h1>Hello StackBlitz!</h1>
+      <p>{counter}</p>
+      <button onClick={() => setCounter(counter + 1)}>sumar + </button>
+      <button onClick={() => setCounter(restar)}>restar - </button>
+      <button onClick={() => setCounter(counter - counter)}>reset</button>
+    </div>
+  );
+}
+
+
+/////
+
+
+
+import React from 'react';
+import './style.css';
+import { useState } from 'react';
+
+export default function App() {
+  const [contador, setContador] = useState(0);
+  const [fecha, setFecha] = useState('');
+
+  const sumar = () => {
+    let hoy = new Date();
+    setContador(contador + 1);
+    setFecha(String(hoy.toUTCString()));
+  };
+
+  return (
+    <div>
+      <h1>Hello StackBlitz!</h1>
+      <p>
+        {contador} {fecha}
+      </p>
+      <button onClick={sumar}>CLICK&DATE</button>
+    </div>
+  );
+}
