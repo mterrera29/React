@@ -32,7 +32,7 @@ const ItemDetail = ({productos}) => {
                         Categoría: {prod.categoria}
                       </Text>
                       <Text fontSize='xs' color="red.300">
-                        Stock:
+                        Stock: {prod.stock}
                       </Text>
                       <Text color='blue.600' fontSize='2xl'>
                         ${prod.precio}
@@ -42,7 +42,7 @@ const ItemDetail = ({productos}) => {
                       <Button variant='solid' colorScheme='blue'>
                         Buy now
                       </Button>
-                      <ItemCount/>
+                      <ItemCount stock={prod.stock} />
                     </ButtonGroup>
                   </CardFooter>
                     </Stack>

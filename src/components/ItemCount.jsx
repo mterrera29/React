@@ -5,27 +5,30 @@ import {
     Spacer
   } from '@chakra-ui/react'
 
-const ItemCount = () => {
+const ItemCount = ({stock}) => {
 
-   const [counter, setCounter] = useState(0);
-   function sumar(){
-    setCounter(counter+1)
-   }
-   function restar() {
-     if (counter > 0) {
-       setCounter(counter - 1);
-     } else {
-       setCounter(counter);
-     }
+  const [counter, setCounter] = useState(0);
+  function sumar(){
+    if (counter < stock) {
+      setCounter(counter + 1);
+  }
+  }
+  function restar() {
+    if (counter > 0) {
+      setCounter(counter - 1);
+    } else {
+      setCounter(counter);
     }
+  }
+  
   return (
     <div>
         <Button bg="gray.100"  width='150px' fontSize='14px'>
-            <span onClick={restar}>-</span>
+            <span onClick={restar} className="btn">-</span>
             <Spacer />
             <span>{counter}</span>
             <Spacer />
-            <span onClick={sumar}>+</span>
+            <span onClick={sumar} className="btn">+</span>
         </Button>
     </div>
   )

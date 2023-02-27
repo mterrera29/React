@@ -15,7 +15,7 @@ const ItemDetailContainer = () => {
         }, 2000);
     });
   }
-  ///async fetch
+  ///async 
   async function fetchingData(){
     try{
       const datosFetched = await getDatos();
