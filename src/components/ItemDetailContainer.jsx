@@ -4,6 +4,8 @@ import Data from "./data.json";
 
 const ItemDetailContainer = () => {
 
+  const [product, setProduct] = useState([])
+  
   ///promise
   const getDatos = () =>{
     return new Promise((resolve,reject)=>{
@@ -25,7 +27,6 @@ const ItemDetailContainer = () => {
     }
   }
 
-  const [product, setProduct] = useState([])
 
   useEffect(() =>{
     fetchingData().then((product) => setProduct(product))

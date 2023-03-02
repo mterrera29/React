@@ -2,7 +2,7 @@ import React from 'react'
 import { Card, CardHeader, CardBody, CardFooter, Stack, Heading, Divider, ButtonGroup, Button, Image, Text} from '@chakra-ui/react'
 import { Link } from 'react-router-dom'
 
-const Item = ({id,nombre,img,precio, categoria}) => {
+const Item = ({id,nombre,img,precio, categoria, stock}) => {
   return (
     <div className='card'>
         <Card maxW='sm'>
@@ -19,7 +19,7 @@ const Item = ({id,nombre,img,precio, categoria}) => {
                 {categoria}
               </Text>
               <Text fontSize='xs' color="red.300">
-                Stock:
+                Stock: {stock}
               </Text>
             </Stack>
           </CardBody>

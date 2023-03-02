@@ -38,13 +38,13 @@ const NavBar = () => {
                 Categorías
               </button>
             <ul className="dropdown-menu">
-              <Link to={`/category/${"Tecnología"}`}>
+              <Link to={`/category/tecno`}>
                 <li><p className="dropdown-item">Tecnología</p></li>
               </Link >
-              <Link to={`/category/${"Salud"}`}>
+              <Link to={`/category/salud`}>
                 <li><p className="dropdown-item">Salud</p></li>
               </Link >
-              <Link to={`/category/${"Cuidado personal"}`}>
+              <Link to={`/category/cuidado`}>
                <li><p className="dropdown-item" >Cuidado personal</p></li>
               </Link >
             </ul>

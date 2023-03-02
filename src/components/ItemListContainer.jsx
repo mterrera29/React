@@ -5,8 +5,11 @@ import { useParams } from 'react-router-dom';
 
 const ItemListContainer = ({}) => {
 
-  const {category} = useParams()
-
+  const {cat} = useParams()
+  const [product, setProduct] = useState([])
+  
+  const filtroCategoria = product.filter((productos) => productos.cat === cat);
+  
   ///promise
   const getDatos = () =>{
     return new Promise((resolve,reject)=>{
@@ -23,23 +26,21 @@ const ItemListContainer = ({}) => {
     try{
     const datosFetched = await getDatos();
     return datosFetched;
-    }catch (err){
-      console.log(err);
-    }
+  }catch (err){
+    console.log(err);
   }
+}
 
-  const [product, setProduct] = useState([])
+useEffect(() =>{
+  fetchingData().then((product) => setProduct(product))
+}, [])
 
-  useEffect(() =>{
-    fetchingData().then((product) => setProduct(product))
-  }, [])
-  
 
-  const filtroCategoria = product.filter((productos) => productos.categoria === category);
+
 
   return (
     <div>
-      {category ? <ItemList productos={filtroCategoria}/> : <ItemList productos={product}/>}
+      {cat ? <ItemList productos={filtroCategoria}/> : <ItemList productos={product}/>}
     </div>
   )
 }

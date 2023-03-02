@@ -7,14 +7,14 @@ import {
 
 const ItemCount = ({stock}) => {
 
-  const [counter, setCounter] = useState(0);
+  const [counter, setCounter] = useState(1);
   function sumar(){
     if (counter < stock) {
       setCounter(counter + 1);
   }
   }
   function restar() {
-    if (counter > 0) {
+    if (counter > 1) {
       setCounter(counter - 1);
     } else {
       setCounter(counter);
