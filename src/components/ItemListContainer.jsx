@@ -29,7 +29,8 @@ const ItemListContainer = () => {
     <div>
       {loading? 
       <div className='spinner'><Spinner/></div>
-      : (cat ? <ItemList productos={filtroCategoria}/> : <ItemList productos={product}/>)}
+      : (cat ? <ItemList productos={filtroCategoria}/> : <ItemList productos={product}/>)
+      }
     </div>
   );
 };
