@@ -53,3 +53,74 @@ export default function App() {
     </div>
   );
 }
+
+
+
+
+  
+  /* ///promise
+  const getDatos = () =>{
+    return new Promise((resolve,reject)=>{
+      if(Data.length === 0){
+        reject(new Error ("No hay datos"))
+      }
+        setTimeout(()=>{
+          setLoading(false)
+          resolve(Data)
+        }, 1000);
+    });
+  }
+  ///async 
+  async function fetchingData(){
+    try{
+    const datosFetched = await getDatos();
+    return datosFetched;
+    }catch (err){
+      console.log(err);
+    }
+  }
+  useEffect(() =>{
+    fetchingData().then((product) => setProduct(product))
+  }, []) */
+
+
+  /* useEffect(() => {
+    const db = getFirestore();
+
+    const prod = doc(db, "productos", `${id}`);
+    getDoc(prod).then((snapshot) => {
+      if (snapshot.exists()) {
+        setProduct({id:snapshot.id, ...snapshot.data()});
+        setLoading(false)
+      } else {
+        console.log("Producto no encontrado");
+      }
+    });
+  }, []); */
+
+
+
+   /* ///promise
+  const getDatos = () =>{
+    return new Promise((resolve,reject)=>{
+      if(Data.length === 0){
+        reject(new Error ("No hay datos"))
+      }
+        setTimeout(()=>{
+          setLoading(false)
+          resolve(Data)
+        }, 1000);
+    });
+  }
+  ///async 
+  async function fetchingData(){
+    try{
+      const datosFetched = await getDatos();
+      return datosFetched;
+     }catch (err){
+      console.log(err);
+    }
+  }
+  useEffect(() =>{
+    fetchingData().then((product) => setProduct(product))
+  }, []) */

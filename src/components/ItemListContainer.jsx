@@ -1,48 +1,37 @@
 import React, { useEffect, useState } from 'react';
 import ItemList from './ItemList';
-import Data from "./data.json"
 import { useParams } from 'react-router-dom';
+import { Spinner } from '@chakra-ui/react';
+import { collection, getDocs, getFirestore } from "firebase/firestore";
 
-const ItemListContainer = ({}) => {
+const ItemListContainer = () => {
 
-  const {cat} = useParams()
-  const [product, setProduct] = useState([])
+  const {cat} = useParams();
+  const [product, setProduct] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const db = getFirestore();
+    const productCollection = collection(db, "productos");
+    getDocs(productCollection).then((querySnapshot) => {
+      const producto = querySnapshot.docs.map((doc) => ({
+        ...doc.data(),
+        id: doc.id,
+      }));
+      setProduct(producto);
+      setLoading(false)
+    });
+  }, []);
   
   const filtroCategoria = product.filter((productos) => productos.cat === cat);
-  
-  ///promise
-  const getDatos = () =>{
-    return new Promise((resolve,reject)=>{
-      if(Data.length === 0){
-        reject(new Error ("No hay datos"))
-      }
-        setTimeout(()=>{
-          resolve(Data)
-        }, 2000);
-    });
-  }
-  ///async 
-  async function fetchingData(){
-    try{
-    const datosFetched = await getDatos();
-    return datosFetched;
-  }catch (err){
-    console.log(err);
-  }
-}
-
-useEffect(() =>{
-  fetchingData().then((product) => setProduct(product))
-}, [])
-
-
-
 
   return (
     <div>
-      {cat ? <ItemList productos={filtroCategoria}/> : <ItemList productos={product}/>}
+      {loading? 
+      <div className='spinner'><Spinner/></div>
+      : (cat ? <ItemList productos={filtroCategoria}/> : <ItemList productos={product}/>)}
     </div>
-  )
-}
+  );
+};
 
-export default ItemListContainer
+export default ItemListContainer;

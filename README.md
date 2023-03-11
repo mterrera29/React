@@ -1,24 +1,26 @@
 # E-commerce
- ---
- ```js
-function sumar(){
-    colsole.log("hola)
-}
- ```
 
+Proyecto de ReactJS donde emulamos un e-comerce con funciones como:
 
- palabra reservada `coder ="CoderHouse"`
+1. Traer productos de una base de datos.
+1. Separarlos por categorías.
+1. Añadirlos a un carrito.
+1. No permite añadir al carrito una cantidad del producto superior al stock.
+1. Eliminar los productos del carrito.
+1. Sumar el precio total de los productos.
+1. Realizar la compra mediante un formulario.
+1. Al realizar la compra, envía una orden a una base de datos que devuelve un ID de compra.
 
- [Enlace a una pag](www.google.com)
+* Para ejecutar el proyecto :
 
- 1. lista
- 1. lista
+```
+npm run dev
+```
 
- * lista
-* lista
+* Librerias utilizadas:
 
-Nombre|Apellido|Email|
-|---|---|---|
-Matias|Terrera|terrera@asd.com
-
-![alt imagen](./Recording%202023-02-21%20at%2022.11.10.gif)
+1. Vite.
+1. ChackraUI.
+1. Bootstrap.
+1. React-router-dom.
+1. Base de datos NoSQL Firebase.

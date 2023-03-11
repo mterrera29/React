@@ -1,8 +1,19 @@
-import React from 'react'
-import { Card, CardHeader, CardBody, CardFooter, Stack, Heading, Divider, ButtonGroup, Button, Image, Text} from '@chakra-ui/react'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { 
+  Card,
+  CardBody, 
+  CardFooter, 
+  Stack, 
+  Heading, 
+  Divider, 
+  ButtonGroup, 
+  Button, 
+  Image, 
+  Text
+} from '@chakra-ui/react';
+import { Link } from 'react-router-dom';
 
-const Item = ({id,nombre,img,precio, categoria, stock}) => {
+const Item = ( {id, nombre, img, precio, categoria, stock} ) => {
   return (
     <div className='card'>
         <Card maxW='sm'>
@@ -35,7 +46,7 @@ const Item = ({id,nombre,img,precio, categoria, stock}) => {
           </CardFooter>
         </Card>
     </div>
-  )
-}
+  );
+};
 
-export default Item
+export default Item;
