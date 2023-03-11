@@ -1,3 +1,6 @@
+default.txt
+data.json
+README2.md
 # Logs
 logs
 *.log
@@ -22,6 +25,3 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-
-default.txt
-README2.md
