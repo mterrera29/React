@@ -1,6 +1,6 @@
-default.txt
-data.json
-README2.md
+/default.txt
+/data.json
+/README2.md
 # Logs
 logs
 *.log

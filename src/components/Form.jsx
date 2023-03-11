@@ -35,7 +35,7 @@ const Form = ({total, items}) => {
             <Input size="s" w="500px"  placeholder='example@example.com' onChange={(e) => setEmail(e.target.value)}/>
             <FormLabel m="3px">Repita su Email</FormLabel>
             <Input size="s" w="500px"  placeholder='example@example.com' onChange={(e) => setEmail2(e.target.value)}/>
-            {email === ""?
+            {(email === "" || email2 === "")?
             <FormLabel m="3px" color="grey">Ingresar emails...</FormLabel>
             : email !== email2?
             <FormLabel m="3px" color="red">Sus emails no coinciden</FormLabel>
