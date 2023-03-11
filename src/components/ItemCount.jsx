@@ -30,7 +30,7 @@ const ItemCount = ({stock, id, nombre , precio, img}) => {
       setCounter(counter);
     };
   }
-  
+
   function reset(){
     setCounter(1);
   };
@@ -68,7 +68,8 @@ const ItemCount = ({stock, id, nombre , precio, img}) => {
   return (
     <div className='counterBtnContainer'>
         <div className='counterBtn'>
-          {counter === 1?(<Button isDisabled >-</Button>)
+          {counter === 1?
+          <Button isDisabled >-</Button>
           :<Button onClick={restar}>-</Button>
           }
           <Spacer />

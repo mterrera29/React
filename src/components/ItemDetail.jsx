@@ -27,7 +27,7 @@ const ItemDetail = ({productos}) => {
       if (snapshot.exists()) {
         setProduct(snapshot.data());
       } else {
-        console.log("No such document!");
+        console.log("El producto no está disponible!");
       }
     });
   },[]);

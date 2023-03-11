@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Cart from './components/Cart';
@@ -20,7 +19,7 @@ const App = () => {
         </Routes>
       </BrowserRouter>
     </ShoppingCartProvider>
-  )
-}
+  );
+};
 
-export default App
+export default App;
